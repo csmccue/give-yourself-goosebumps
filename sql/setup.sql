@@ -1,7 +1,9 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS book_one;
+DROP TABLE IF EXISTS books CASCADE;
+DROP TABLE IF EXISTS pages CASCADE;
+DROP TABLE IF EXISTS options CASCADE;
 
 CREATE TABLE users (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -11,19 +13,53 @@ CREATE TABLE users (
   last_name VARCHAR NOT NULL
 );
 
-CREATE TABLE book_one (
+CREATE TABLE books (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  text VARCHAR,
-  choices VARCHAR,
+  title VARCHAR
 );
 
-INSERT INTO book_one (
-  id,
-  text,
-  choices
-)
+CREATE TABLE pages (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  book_id BIGINT,
+  text VARCHAR,
+FOREIGN KEY (book_id) REFERENCES books(id)
+);
 
+CREATE TABLE options (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  page_id BIGINT,
+  target_page BIGINT,
+  text VARCHAR,
+FOREIGN KEY (page_id) REFERENCES pages(id)
+FOREIGN KEY (target_page) REFERENCES pages(id)
+);
+
+INSERT INTO books (
+  title
+)
 VALUES
-('Connor goes to the store and sees a group of Amish people', [{2, 'does Connor take shirt off, go to PAGE 2'},{3, 'does Connor tip his hat towards the Amish, go to PAGE 3'}]),
-('Connor took his shirt off and the Amish ran away', [{4, 'uh oh here we go again...'}]),
-('The Amish are satisfied with Connor', [{5, 'Connor rizzes up the Amish that walk up to him but does not join the Amish culture'},{6, 'Connor decides to join the Amish culture'}]);
+('Escape from the Carnival of Horrors');
+
+INSERT INTO pages (
+  book_id,
+  text
+)
+VALUES
+('1', 'Connor goes to the supermarket to buy some peanut butter and sees some Amish people'),
+('1', 'The Amish folk invite Connor to join their culture'),
+('1', 'The Amish attack Connor for insulting their culture');
+
+INSERT INTO options (
+  page_id,
+  target_page,
+  text
+)
+VALUES 
+('1', '2', 'Connor tips his hat towards the Amish people and declares his love of carpentry'),
+('1', '3', 'Connor flips out his Razor phone and takes a video of the Amish losers');
+
+
+
+
+
+
