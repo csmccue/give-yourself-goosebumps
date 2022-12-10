@@ -21,7 +21,7 @@ CREATE TABLE books (
 CREATE TABLE pages (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   book_id BIGINT,
-  text VARCHAR,
+  page_text VARCHAR,
 FOREIGN KEY (book_id) REFERENCES books(id)
 );
 
@@ -29,8 +29,8 @@ CREATE TABLE options (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   page_id BIGINT,
   target_page BIGINT,
-  text VARCHAR,
-FOREIGN KEY (page_id) REFERENCES pages(id)
+  option_text VARCHAR,
+FOREIGN KEY (page_id) REFERENCES pages(id),
 FOREIGN KEY (target_page) REFERENCES pages(id)
 );
 
@@ -42,7 +42,7 @@ VALUES
 
 INSERT INTO pages (
   book_id,
-  text
+  page_text
 )
 VALUES
 ('1', 'Connor goes to the supermarket to buy some peanut butter and sees some Amish people'),
@@ -52,7 +52,7 @@ VALUES
 INSERT INTO options (
   page_id,
   target_page,
-  text
+  option_text
 )
 VALUES 
 ('1', '2', 'Connor tips his hat towards the Amish people and declares his love of carpentry'),
