@@ -31,8 +31,8 @@ CREATE TABLE options (
   page_id BIGINT,
   target_page BIGINT,
   option_text VARCHAR,
-FOREIGN KEY (page_id) REFERENCES pages(id),
-FOREIGN KEY (target_page) REFERENCES pages(id)
+FOREIGN KEY (page_id) REFERENCES pages(id)
+-- FOREIGN KEY (target_page) REFERENCES pages(id)
 );
 
 INSERT INTO books (
@@ -47,6 +47,7 @@ INSERT INTO pages (
   page_text
 )
 VALUES
+('1','0','THE END'),
 ('1','1', '"What do you want to do?”
 “I don’t know, Patty. What do you want to do?”
 “Not fair, Brad. I asked you first.”
@@ -1099,43 +1100,32 @@ VALUES
 ('23','103', 'If you decide to jump out, go to PAGE 103.'),
 ('23','119', 'If you urge the horse to gallop, go to PAGE 119.'),
 ('24','0', 'THE END'),
-
 ('25','44', 'ON PAGE 44?'),
 ('25','74', 'ON PAGE 74?'),
 ('25','124', 'ON PAGE 124?'),
 ('26','58', 'Go on to PAGE 58.'),
-
 ('27','55', 'Turn to PAGE 55.'),
 ('27','45', 'If it’s sunny out, turn to PAGE 45.'),
 ('28','85', 'If it’s raining or if it’s nighttime, turn to PAGE 85.'),
-
-
 ('29','65', 'Squeeze over to PAGE 65.'),
 ('30','88', 'Want to try the Boat Trip to Nowhere? Go to PAGE 88.'),
 ('30','66', 'Ready for the House of Horrors? Go to PAGE 66.'),
-
 ('31','89', 'Go to PAGE 89.'),
 ('32','105', 'Turn to PAGE 105'),
-
 ('33','89', 'If it comes up heads, take the blue door to PAGE 57.'),
 ('33','105', 'If it comes up tails, take the red door to PAGE 104.'),
 ('34','89', 'Quick! Go to PAGE 47.'),
-
 ('35','13', 'Go to PAGE 13.'),
 ('36','118', 'Turn to PAGE 118. HELP!'),
-
 ('37','93', 'Turn to PAGE 93.'),
 ('38','9', 'If you want to spin again for more points, go to PAGE 9.'),
 ('38','72', 'If you haven’t played Guess Your Weight on Mars yet, go to PAGE 72.'),
 ('38','17', 'If you have played Guess Your Weight on Mars, go to PAGE 17.'),
-
 ('39','94', 'What happens? Turn to PAGE 94 to find out!'),
-
 ('40','0', 'THE END '),
 ('41','16', 'Turn to PAGE 16 to find out.'),
 ('42','108', 'Halloween Express ? Then turn to PAGE 108.'),
 ('42','107', 'Mountain King? Then turn to PAGE 107.'),
-
 ('43','84', 'You have no choice. Follow Big Al to PAGE 84.'),
 ('44','25', 'Go back to PAGE 25 and spin again.'),
 ('45','98', 'Turn to PAGE 98.'),
@@ -1145,7 +1135,6 @@ Yes.'),
 ('47','64', 'If you want to go to the House of Horrors alone, go to PAGE 64.'),
 ('48','60', 'Hurry to PAGE 60.'),
 ('49','50', 'Fly on to PAGE 50.'),
-
 ('50','115', 'If you haven’t, go to PAGE 115.'),
 ('51','0', 'THE END'),
 ('52','24', 'Chug to PAGE 24.'),
@@ -1153,13 +1142,11 @@ Yes.'),
 ('54','83', 'Turn left! And go to PAGE 83.'),
 ('55','69', 'If you think the words are karru marri odonna loma molonu karrano, go to PAGE 69.'),
 ('55','82', 'If you think the words are oooopah lupah dummie dupah, go to PAGE 82.'),
-
 ('56','37', 'Turn to PAGE 37.'),
 ('57','135', 'Turn to PAGE 135.'),
 ('58','39', 'Turn to PAGE 39.'),
 ('59','11', 'If you decide to help the freaks, go to PAGE 11.'),
 ('59','113', 'If you don’t want to help the freaks, go to PAGE 113.'),
-
 ('60','125', 'If you run to the left, turn to PAGE 125.'),
 ('60','12', 'If you run to the right, turn to PAGE 12.'),
 ('61','0', 'THE END'),
@@ -1169,25 +1156,19 @@ Yes.'),
 ('63','86', 'You choose not to take the back way out? Go to PAGE 86.'),
 ('64','46', 'Make a grab for the side of the bridge? Turn to PAGE 46.'),
 ('64','30', 'Flap your arms and try to fly? Turn to PAGE 30.'),
-
-
 ('65','31', 'Bounce to PAGE 31.'),
 ('66','80', 'Look for a way out on PAGE 80.'),
 ('67','91', 'Try, on PAGE 91.'),
 ('68','0', 'THE END'),
-
 ('69','0', '“ THE END .” 
-
 Wait! This isn’t the way this is supposed to end. Quick — you have one 
 last chance. If the fortune-teller told you a secret number, go to that page 
 now!'),
 ('70','52', 'Turn to PAGE 52.'),
-
 ('71','0', 'Turn to PAGE 52. '),
 ('72','18', 'Go to PAGE 18.'),
 ('73','0', 'THE END '),
 ('74','131', 'Turn to PAGE 131.'),
-
 ('75','96', 'Turn to PAGE 96.'),
 ('76','0', 'THE END! 
 
@@ -1200,12 +1181,9 @@ THE END! '),
 ('77','78', 'To find your future, go to PAGE 78.'),
 ('78','14', 'Pick red? Go to PAGE 14.'),
 ('78','59', 'Pick blue? Go to PAGE 59.'),
-
 ('79','67', 'Turn to PAGE 67 to find out what.'),
 ('80','29', 'If you decide to turn right, go to PAGE 29.'),
 ('80','118', 'If you decide to turn left, go to PAGE 118.'),
-
-
 ('81','0', 'THE END'),
 ('82','0', 'THE END'),
 ('83','73', 'If you can do it — turn to PAGE 73.'),
@@ -1217,9 +1195,7 @@ THE END! '),
 ('87','4', 'Uh-oh. Quick! Better turn to PAGE 4.'),
 ('88','32', 'Enter the bog on PAGE 32.'),
 ('89','79', 'Try to kick the doctor and run ? Turn to PAGE 79.'),
-('89','51', 'Wait until one of the monsters leaves and the odds are better than three 
-against one? Turn to PAGE 51.'),
-
+('89','51', 'Wait until one of the monsters leaves and the odds are better than three against one? Turn to PAGE 51.'),
 ('90','100', 'If you decide to wait to be rescued, go to PAGE 100.'),
 ('90','56', 'If you decide to swim for it, go to PAGE 56.'),
 ('91','22', 'Turn to PAGE 122 '),
@@ -1227,13 +1203,11 @@ against one? Turn to PAGE 51.'),
 ('93','26', 'Quick! Hurry to PAGE 26 and you can go on the Space Coaster with them. '),
 ('94','92', 'Wait for help to come? Turn to PAGE 92.'),
 ('94','111', 'Hop out of the car? Go to PAGE 111.'),
-
 ('95','117', 'To find out what’s so funny, turn to PAGE 117.'),
 ('96','23', 'Turn to PAGE 23.'),
 ('97','129', 'Hurry to PAGE 129.'),
 ('98','0', 'THE END '),
 ('99','104', 'If you leave by the red door, go to PAGE 104.'),
-
 ('100','0', 'THE END (Burp!)'),
 ('101','0', 'THE END '),
 ('102','120', 'Turn to PAGE 120 for the bad news.'),
@@ -1246,11 +1220,9 @@ against one? Turn to PAGE 51.'),
 ('108','54', 'Speed over to PAGE 54.'),
 ('109','114', 'If you are reading this book on a Monday, Wednesday, Friday, or Saturday, go to PAGE 114.'),
 ('109','71', 'If it’s a Tuesday, Thursday, or Sunday, go to PAGE 71.'),
-
 ('110','133', 'Quick — head over to PAGE 133.'),
 ('111','99', 'Follow the dwarf? Go to PAGE 99.'),
 ('111','33', 'Decide not to follow the dwarf? Go to PAGE 33.'),
-
 ('112','0', 'THE END'),
 ('113','16', 'See what happens on PAGE 16.'),
 ('114','5', 'Run down a different path? Go to PAGE 5.'),
@@ -1261,24 +1233,18 @@ against one? Turn to PAGE 51.'),
 ('117','106', 'Unless what? Turn to PAGE 106.'),
 ('118','36', 'Turn to PAGE 36. HELP!'),
 ('119','0', 'THE END'),
-
-
 ('120','28', 'Turn to PAGE 28.'),
 ('121','63', 'Zoom to PAGE 63.'),
 ('122','81', 'If you think the creature is a robot, try to knock his head off on PAGE 81.'),
-('122','110', 'If you think he’s a real monster or something worse, stay cool on PAGE 
-110.'),
-
+('122','110', 'If you think he’s a real monster or something worse, stay cool on PAGE 110.'),
 ('123','25', 'Zing back to PAGE 25.'),
 ('124','112', 'Your eyes flutter open on PAGE 112.'),
 ('125','43', 'Don’t scream yet. Turn to PAGE 43.'),
 ('126','0', 'THE END'),
 ('127','130', 'Cannon ? Go to PAGE 130.'),
 ('127','128', 'Choo-choo? Go to PAGE 128.'),
-
 ('128','70', 'Turn to PAGE 70.'),
 ('129','0', 'THE END'),
-
 ('130','101', 'Go to PAGE 101. SUCKER!'),
 ('131','116', 'Quick! Turn to PAGE 116.'),
 ('132','21', 'Turn to PAGE 21.'),
@@ -1288,10 +1254,6 @@ against one? Turn to PAGE 51.'),
 ('135','121', 'Pick slide 1,4, or 5, and go to PAGE 121.'),
 ('135','95', 'Pick slide 2, 7, or 9, and go to PAGE 95.'),
 ('135','68', 'Pick slide 3, 6, 8, or 10, and go to PAGE 68.');
-
-
-
-
 
 
 
