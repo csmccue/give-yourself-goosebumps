@@ -31,8 +31,8 @@ CREATE TABLE options (
   page_id BIGINT,
   target_page BIGINT,
   option_text VARCHAR,
-FOREIGN KEY (page_id) REFERENCES pages(id)
--- FOREIGN KEY (target_page) REFERENCES pages(id)
+FOREIGN KEY (page_id) REFERENCES pages(id),
+FOREIGN KEY (target_page) REFERENCES pages(id)
 );
 
 INSERT INTO books (
@@ -47,7 +47,6 @@ INSERT INTO pages (
   page_text
 )
 VALUES
-('1','0','THE END'),
 ('1','1', '"What do you want to do?”
 “I don’t know, Patty. What do you want to do?”
 “Not fair, Brad. I asked you first.”
@@ -276,10 +275,6 @@ Just an inch or two — an inch or two closer to you!
 You take a step back — but the wall behind you is moving, too.
 The walls are moving together. They’re closing in on you.
 You’re going to be crushed!'),
-
-
-
-
 ('1','30','You’re falling ... falling ... You can’t think of anything else to do, so you start flapping your arms like a bird.
 At that moment a huge gust of air shoots up from under you and blows you back onto the bridge.
 Breathing hard, you run the rest of the way across the rickety span. When you reach the safety of the other side, you glance back. And gasp! The bridge and the midway beyond it have vanished! Only a black void remains!
@@ -350,7 +345,6 @@ Now your car starts to plunge downward — like an elevator out of control. Your
 As you shoot toward the open mouth of the tunnel, you begin to scream again. The door of the tunnel is about to close!
 Snap! The door comes crashing down — behind your car. You breathe out a long sigh. But now you’re in a tunnel so dark that you can’t see a thing.
 Scary! But not nearly as scary as what happens next.'),
-
 ('1','40','“Five, four, three, two, one. We have liftoff,” a mechanical voice announces.
 To your horror, the rocket blasts off! You’re slammed against the side of the capsule with hurricane force. Seconds later, you’ve left Earth’s atmosphere.
 A recorded message comes on: “Congratulations. You are the perfect weight for our Mars explorer. We’ll be monitoring your trip and will bring you back in approximately twenty years — with a plus or minus ten-year margin of error in case something goes wrong. But do not worry. Nothing can go wrong ... go wrong ... go wrong.”'),
@@ -417,7 +411,6 @@ You want to leave. You spin around, but you can’t find the opening in the fenc
 Run! — your every survival instinct shouts. But the bird of prey has other ideas. One of them is dinner — with you as the main course.
 The big bird snatches you by the back of your shirt as if you were a rag doll. Kicking and screaming and using every defensive move you learned from karate class, you struggle for your life. But it’s no use. With a jerk he lifts you off the ground.
 And suddenly you have a frightening view of the carnival from twenty feet... thirty feet ... fifty feet up.'),
-
 ('1','50','Thummp, thump, thump. Your heart bangs loudly inside your chest. What kind of carnival is this, you wonder, where a free spin is more like a death sentence?
 You circle a green clump of treetops. You’re really dizzy now. You want to close your eyes. But you know it’s not a good idea — since you’re flying fifty feet high without a plane or a parachute.
 As you circle closer to the treetops, you are met with a horrifying view. Five baby vultures in a nest, five very hungry babies, with mouths gaping wide open.
@@ -570,8 +563,6 @@ He opens his mouth and speaks. “Hey, you. Your face reminds me of a wart I onc
 “I’m sorry,” the dummy says. “I’m sorry you’re so ugly....” Then he laughs at his own lame joke.
 You stare at him and his face grows serious. “You brought me to life,” he says slowly, “but now you are my slaves.
 “Forever — until...'),
-
-
 ('1','70','“Nine ... ten ...”
 “Brad, shut up. Look at this!”
 You point to the letters on the front of the train car.
@@ -648,8 +639,6 @@ He simply smiles at you.
 Now you’re scared. Really scared. But you know you have to do whatever it takes to get out of there. You have to find your friends and escape from this Carnival of Horrors.
 You gather up every ounce of courage and strength you have — and kick him once more. Harder!
 And this time something does happen — BIG TIME!'),
-
-
 ('1','80','You turn a corner and are instantly blinded by glaring lights.
 You are standing in a room of mirrors. Walls. Floor. Ceiling. All mirrors!
 Everywhere you gaze, you are met with reflections of yourself! You take a few steps forward and — BONK! You hit your head on solid glass.
@@ -728,8 +717,6 @@ You change your mind. “I’ll wait — play it cool until at least one of the 
 Then you change your mind again. “No. I’d better make my escape now!”
 The doctor looms inches away. And you’re still not sure what to do.
 You’d better decide fast!'),
-
-
 ('1','90','NO!
 At the last minute, you wrench the steering wheel hard to the left. The side of your boat clears the tree with a sickening scrape.
 You breathe a sigh of relief, but it ends in a groan. A huge, sharp root below the water has just ripped into the bottom of your boat. You hear a tearing sound, then gurgling as the cockpit starts to fill with water.
@@ -799,9 +786,6 @@ Congratulations! You escaped the Carnival of Horrors — but not in one piece.')
 The dwarf does not answer. He sprints off and you have to race to keep up with him. Through a confusing maze of twisting tunnels. You’re sure glad you have a guide.
 The dwarf suddenly stops. “That way,” he says gruffly, pointing straight ahead.
 Before you can blink, he vanishes in a puff of smoke! And you’re left standing in front of two doors. One red. One blue. The red one has a sign that reads: DANGER. The blue one has a sign that reads: BIG DANGER.'),
-
-
-
 ('1','100','“Help! Help! Over here!” you scream, waving your arms wildly in the air.
 “Hold on!” a deep voice answers through the heavy mist.
 The boat turns and speeds toward you. As it nears, the voice calls out again. “Jump! Jump over!”
@@ -875,7 +859,6 @@ In the distance, you can hear the buzz of chain saws. And down by the lake, gian
 As you glance around, you spot an exit sign.
 Then to your horror, you see a giant crane swinging your way. “Duck!” you scream.
 Will you make it to the exit? Is this your lucky day?'),
-
 ('1','110','Something tells you that this monster is not a robot. This one is for real. Maybe it’s the way he stares into your eyes. Or maybe it’s the rows and rows of razor-sharp teeth jutting from his mouth.
 You take a step back. He takes a step closer. A drop of his drool drips on your hand. It sizzles and burns.
 This is the end, you figure. You’ll never escape the Carnival of Horrors. Never see your family or Patty and Brad again.
@@ -952,8 +935,6 @@ You inch forward a few more steps — moving toward the laughter. Slowly.
 You shoot a glance up ahead. The elves are chopping ... and a shiny blade ... is now ... right over ... your head!
 “No,” you scream. “NO! Let me out of here.”
 You feel a sharp pain. And you realize you’ve just had the shortest haircut of your life. Unfortunately, they took a little too much off the top.'),
-
-
 ('1','120','The bad news is the Snake Lady fooled you.
 “Throw them into the large cell with Harold and all the other prisoners,” Big A1 commands.
 You are shoved into a dark cell. You hear a click. You’re locked in. As the Snake Lady leaves with Big Al, you can hear their laughter echo down the hall.
@@ -1021,8 +1002,6 @@ You sit up and what you see is the biggest shock of this whole horrible night...
 The mound of green slime is bearing down on you. Fast! You stand frozen to the spot. Terrified. And then — just in time — you, Patty, and Brad leap to the side. And the Monster Blood slams into the wall with a crushing force — and plows right through it.
 You stare at the giant gaping hole in the wall. Quickly, the three of you jump through the opening. You are standing outside the main gate — where you came in!
 There’s a wide path of destruction across the field and the forest beyond. From somewhere, a clock chimes twelve times, sending a chill down your spine. And when you peer back at the carnival, it has disappeared. All that’s left is a spooky silver mist.'),
-
-
 ('1','130','You and your friends squeeze into the cannon.
 “Ouch! You’re sitting on my hand,” Brad whines.
 But you don’t have time to apologize.
@@ -1055,7 +1034,8 @@ You continue up the ramp. You finally make it to the top, and find yourself stan
 You think hard. The Doom Slide. You know you’ve heard about it before. But where? Where was it?
 And then you remember! It was in a GOOSEBUMPS book you read! One Day at HorrorLand.
 Now you know you’re in big trouble. Because you remember all about the Doom Slide from the book. You remember that if you pick the wrong slide, you’ll spend the rest of your life sliding and sliding — forever!
-Which number is the Doom Slide? Which one?');
+Which number is the Doom Slide? Which one?'),
+('1','136', 'THE END');
 
 
 
@@ -1081,11 +1061,11 @@ VALUES
 ('9', '49','Did you land on 49?'),
 ('10','6','Turn back to PAGE 6.'),
 ('11','35','Race to the back of the Freak Show on PAGE 35 .'),
-('12','0','THE END'),
+('12','136','THE END'),
 ('13','48','Escape through the door down the hall, go to PAGE 48.'),
 ('13','62','Stay and talk to Big Al, go to PAGE 62.'),
 ('14','41','What does she mean ? Turn to PAGE 41 to find out.'),
-('15','0','THE END'),
+('15','136','THE END'),
 ('16','72', 'For Guess Your Weight on Mars, go to PAGE 72.'),
 ('16','8', 'To play Wheel of Chance, go to PAGE 8.'),
 ('17','84', 'The Final Challenge begins on PAGE 84.'),
@@ -1093,13 +1073,13 @@ VALUES
 ('19','9', 'If you think you don’t have enough points, go back to PAGE 9 and spin again.'),
 ('19','72', 'If you think you have enough points and you haven’t played Guess Your Weight, go to PAGE 72.'),
 ('19','17', 'If you have played Guess Your Weight, go to PAGE 17.'),
-('20','0', 'THE END'),
-('21','0', 'THE END'),
+('20','136', 'THE END'),
+('21','136', 'THE END'),
 ('22','8', 'If you have not tried the Wheel of Chance, go to PAGE 8.'),
 ('22','17', 'If you Ve already played the Wheel of Chance, go to PAGE 17.'),
 ('23','103', 'If you decide to jump out, go to PAGE 103.'),
 ('23','119', 'If you urge the horse to gallop, go to PAGE 119.'),
-('24','0', 'THE END'),
+('24','136', 'THE END'),
 ('25','44', 'ON PAGE 44?'),
 ('25','74', 'ON PAGE 74?'),
 ('25','124', 'ON PAGE 124?'),
@@ -1122,21 +1102,21 @@ VALUES
 ('38','72', 'If you haven’t played Guess Your Weight on Mars yet, go to PAGE 72.'),
 ('38','17', 'If you have played Guess Your Weight on Mars, go to PAGE 17.'),
 ('39','94', 'What happens? Turn to PAGE 94 to find out!'),
-('40','0', 'THE END '),
+('40','136', 'THE END '),
 ('41','16', 'Turn to PAGE 16 to find out.'),
 ('42','108', 'Halloween Express ? Then turn to PAGE 108.'),
 ('42','107', 'Mountain King? Then turn to PAGE 107.'),
 ('43','84', 'You have no choice. Follow Big Al to PAGE 84.'),
 ('44','25', 'Go back to PAGE 25 and spin again.'),
 ('45','98', 'Turn to PAGE 98.'),
-('46','0', 'THE END ? 
+('46','136', 'THE END ? 
 Yes.'),
 ('47','26', 'If you decide to join Patty and Brad on the Space Coaster, get on board on PAGE 26.'),
 ('47','64', 'If you want to go to the House of Horrors alone, go to PAGE 64.'),
 ('48','60', 'Hurry to PAGE 60.'),
 ('49','50', 'Fly on to PAGE 50.'),
 ('50','115', 'If you haven’t, go to PAGE 115.'),
-('51','0', 'THE END'),
+('51','136', 'THE END'),
 ('52','24', 'Chug to PAGE 24.'),
 ('53','40', 'Go to PAGE 40.'),
 ('54','83', 'Turn left! And go to PAGE 83.'),
@@ -1149,7 +1129,7 @@ Yes.'),
 ('59','113', 'If you don’t want to help the freaks, go to PAGE 113.'),
 ('60','125', 'If you run to the left, turn to PAGE 125.'),
 ('60','12', 'If you run to the right, turn to PAGE 12.'),
-('61','0', 'THE END'),
+('61','136', 'THE END'),
 ('62','84', 'If you want to go with Al, turn to PAGE 84.'),
 ('62','102', 'If you trust the Snake Lady, turn to PAGE 102.'),
 ('63','48', 'Follow Patty? Turn to PAGE 48.'),
@@ -1159,18 +1139,18 @@ Yes.'),
 ('65','31', 'Bounce to PAGE 31.'),
 ('66','80', 'Look for a way out on PAGE 80.'),
 ('67','91', 'Try, on PAGE 91.'),
-('68','0', 'THE END'),
-('69','0', '“ THE END .” 
+('68','136', 'THE END'),
+('69','136', '“ THE END .” 
 Wait! This isn’t the way this is supposed to end. Quick — you have one 
 last chance. If the fortune-teller told you a secret number, go to that page 
 now!'),
 ('70','52', 'Turn to PAGE 52.'),
-('71','0', 'Turn to PAGE 52. '),
+('71','136', 'Turn to PAGE 52. '),
 ('72','18', 'Go to PAGE 18.'),
-('73','0', 'THE END '),
+('73','136', 'THE END '),
 ('74','131', 'Turn to PAGE 131.'),
 ('75','96', 'Turn to PAGE 96.'),
-('76','0', 'THE END! 
+('76','136', 'THE END! 
 
 THE END! 
 
@@ -1184,14 +1164,14 @@ THE END! '),
 ('79','67', 'Turn to PAGE 67 to find out what.'),
 ('80','29', 'If you decide to turn right, go to PAGE 29.'),
 ('80','118', 'If you decide to turn left, go to PAGE 118.'),
-('81','0', 'THE END'),
-('82','0', 'THE END'),
+('81','136', 'THE END'),
+('82','136', 'THE END'),
 ('83','73', 'If you can do it — turn to PAGE 73.'),
 ('83','127', 'If you couldn ’t — turn to PAGE 127.'),
 ('84','123', 'You’re going to find out on PAGE 123.'),
 ('85','126', 'Turn to PAGE 126.'),
 
-('86','0', 'THE END '),
+('86','136', 'THE END '),
 ('87','4', 'Uh-oh. Quick! Better turn to PAGE 4.'),
 ('88','32', 'Enter the bog on PAGE 32.'),
 ('89','79', 'Try to kick the doctor and run ? Turn to PAGE 79.'),
@@ -1206,10 +1186,10 @@ THE END! '),
 ('95','117', 'To find out what’s so funny, turn to PAGE 117.'),
 ('96','23', 'Turn to PAGE 23.'),
 ('97','129', 'Hurry to PAGE 129.'),
-('98','0', 'THE END '),
+('98','136', 'THE END '),
 ('99','104', 'If you leave by the red door, go to PAGE 104.'),
-('100','0', 'THE END (Burp!)'),
-('101','0', 'THE END '),
+('100','136', 'THE END (Burp!)'),
+('101','136', 'THE END '),
 ('102','120', 'Turn to PAGE 120 for the bad news.'),
 ('103','109', 'Go to PAGE 109.'),
 ('104','61', 'Go to PAGE 61.'),
@@ -1223,16 +1203,16 @@ THE END! '),
 ('110','133', 'Quick — head over to PAGE 133.'),
 ('111','99', 'Follow the dwarf? Go to PAGE 99.'),
 ('111','33', 'Decide not to follow the dwarf? Go to PAGE 33.'),
-('112','0', 'THE END'),
+('112','136', 'THE END'),
 ('113','16', 'See what happens on PAGE 16.'),
 ('114','5', 'Run down a different path? Go to PAGE 5.'),
 ('114','108', 'Halloween Express ? Go to PAGE 108.'),
-('115','0', 'THE END'),
+('115','136', 'THE END'),
 ('116','97', 'If you won a can of Monster Blood, go to PAGE 97.'),
 ('116','27', 'If you don’t have the Monster Blood, run to PAGE 27.'),
 ('117','106', 'Unless what? Turn to PAGE 106.'),
 ('118','36', 'Turn to PAGE 36. HELP!'),
-('119','0', 'THE END'),
+('119','136', 'THE END'),
 ('120','28', 'Turn to PAGE 28.'),
 ('121','63', 'Zoom to PAGE 63.'),
 ('122','81', 'If you think the creature is a robot, try to knock his head off on PAGE 81.'),
@@ -1240,11 +1220,11 @@ THE END! '),
 ('123','25', 'Zing back to PAGE 25.'),
 ('124','112', 'Your eyes flutter open on PAGE 112.'),
 ('125','43', 'Don’t scream yet. Turn to PAGE 43.'),
-('126','0', 'THE END'),
+('126','136', 'THE END'),
 ('127','130', 'Cannon ? Go to PAGE 130.'),
 ('127','128', 'Choo-choo? Go to PAGE 128.'),
 ('128','70', 'Turn to PAGE 70.'),
-('129','0', 'THE END'),
+('129','136', 'THE END'),
 ('130','101', 'Go to PAGE 101. SUCKER!'),
 ('131','116', 'Quick! Turn to PAGE 116.'),
 ('132','21', 'Turn to PAGE 21.'),
