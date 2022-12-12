@@ -3,6 +3,8 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 const UserService = require('../lib/services/UserService');
+const User = require('../lib/models/User');
+User;
 
 const mockUser = {
   firstName: 'Test',
@@ -30,9 +32,9 @@ describe('user routes', () => {
   it('current_page in users table is updated when authenticated user navigates to new page', async () => {
     const [agent, user] = await registerAndLogin();
     expect(user.currentPage).toBe('1');
-    const pageResp = await agent.get('/api/v1/pages/2');
-    console.log('pagesss', pageResp.body);
-    expect(user.currentPage).toBe('2');
+    await agent.get('/api/v1/pages/2');
+    const updatedUser = await User.getByEmail(mockUser.email);
+    expect(updatedUser.currentPage).toBe('2');
   });
   it('authenticated user can view pages', async () => {
     const [agent] = await registerAndLogin();
