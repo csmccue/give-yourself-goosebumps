@@ -27,8 +27,16 @@ describe('user routes', () => {
   afterAll(() => {
     pool.end();
   });
+  it('current_page in users table is updated when authenticated user navigates to new page', async () => {
+    const [agent, user] = await registerAndLogin();
+    expect(user.currentPage).toBe('1');
+    const pageResp = await agent.get('/api/v1/pages/2');
+    console.log('pagesss', pageResp.body);
+    expect(user.currentPage).toBe('2');
+  });
   it('authenticated user can view pages', async () => {
     const [agent] = await registerAndLogin();
+
     const res = await agent.get('/api/v1/pages/1');
     expect(res.body).toMatchInlineSnapshot(`
       Object {
