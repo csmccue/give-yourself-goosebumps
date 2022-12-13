@@ -65,5 +65,14 @@ describe('user routes', () => {
     `);
   });
 
-  test('POST /pages/2 adds new path to user paths and redirects to GET /pages/2', () => {});
+  test('POST /pages/2 adds new path to user paths and redirects to GET /pages/2', async () => {
+    const password = mockUser.password;
+    const agent = request.agent(app);
+    const user = await UserService.create({ ...mockUser });
+    const { email } = user;
+    await agent.post('/api/v1/users/sessions').send({ email, password });
+    const res = agent.post('/api/v1/pages/2');
+    expect(User.getAllPaths);
+    // going to have userid, path from page one to page 2
+  });
 });

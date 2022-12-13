@@ -96,11 +96,27 @@ describe('user routes', () => {
     expect(resp.status).toBe(204);
   });
 
-  // it('GET /users/sessions successful sign in redirects user to current_page', async () => {
-  //   const [agent, user] = registerAndLogin();
-  //   // text on page is first page stuff
-  //   // go to page 2, sign out user, the sign back in and expect user to be on page 2
-  // });
+  it('GET /users/sessions successful sign in redirects user to current_page', async () => {
+    const password = mockUser.password;
+    const agent = request.agent(app);
+    const user = await UserService.create({ ...mockUser });
+    const { email } = user;
+    const res = await agent
+      .post('/api/v1/users/sessions')
+      .send({ email, password });
+    expect(res.header.location).toMatchInlineSnapshot(
+      '"http://localhost:7890/api/v1/pages/1"'
+    );
 
-  //git nightmare
+    await agent.get('/api/v1/pages/10');
+    await agent.delete('/api/v1/users/sessions');
+    const resTwo = await agent
+      .post('/api/v1/users/sessions')
+      .send({ email, password });
+    expect(resTwo.header.location).toMatchInlineSnapshot(
+      '"http://localhost:7890/api/v1/pages/10"'
+    );
+    // text on page is first page stuff
+    // go to page 2, sign out user, the sign back in and expect user to be on page 2
+  });
 });
