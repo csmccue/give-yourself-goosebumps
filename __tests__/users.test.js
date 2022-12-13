@@ -96,9 +96,9 @@ describe('user routes', () => {
     expect(resp.status).toBe(204);
   });
 
-  it('GET /users/sessions successful sign in redirects user to current_page', async () => {
-    const [agent, user] = registerAndLogin();
-    // text on page is first page stuff
-    // go to page 2, sign out user, the sign back in and expect user to be on page 2
-  });
+  // it('GET /users/sessions successful sign in redirects user to current_page', async () => {
+  //   const [agent, user] = registerAndLogin();
+  //   // text on page is first page stuff
+  //   // go to page 2, sign out user, the sign back in and expect user to be on page 2
+  // });
 });
