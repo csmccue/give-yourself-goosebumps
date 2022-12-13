@@ -14,15 +14,8 @@ const mockUser = {
 
 const registerAndLogin = async (userProps = {}) => {
   const password = userProps.password ?? mockUser.password;
-
-  // Create an "agent" that gives us the ability
-  // to store cookies between requests in a test
   const agent = request.agent(app);
-
-  // Create a user to sign in with
   const user = await UserService.create({ ...mockUser, ...userProps });
-
-  // ...then sign in
   const { email } = user;
   await agent.post('/api/v1/users/sessions').send({ email, password });
   return [agent, user];
@@ -45,6 +38,7 @@ describe('user routes', () => {
       firstName,
       lastName,
       email,
+      currentPage: expect.any(String),
     });
   });
 
@@ -83,12 +77,9 @@ describe('user routes', () => {
       firstName: 'admin',
       lastName: 'admin',
     });
-    // sign in the user
     await agent
       .post('/api/v1/users/sessions')
       .send({ email: 'admin', password: '1234' });
-
-    // const [agent] = await registerAndLogin({ email: 'admin' });
     const res = await agent.get('/api/v1/users/');
     expect(res.status).toEqual(200);
   });
@@ -103,5 +94,11 @@ describe('user routes', () => {
     const [agent] = await registerAndLogin();
     const resp = await agent.delete('/api/v1/users/sessions');
     expect(resp.status).toBe(204);
+  });
+
+  it('GET /users/sessions successful sign in redirects user to current_page', async () => {
+    const [agent, user] = registerAndLogin();
+    // text on page is first page stuff
+    // go to page 2, sign out user, the sign back in and expect user to be on page 2
   });
 });

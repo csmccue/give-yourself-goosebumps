@@ -1,17 +1,11 @@
--- Use this file to define your SQL tables
--- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS books CASCADE;
 DROP TABLE IF EXISTS pages CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS books CASCADE;
 DROP TABLE IF EXISTS options CASCADE;
+DROP TABLE IF EXISTS paths CASCADE;
 
-CREATE TABLE users (
-  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  email VARCHAR,
-  password_hash VARCHAR NOT NULL,
-  first_name VARCHAR NOT NULL,
-  last_name VARCHAR NOT NULL
-);
 
 CREATE TABLE books (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -23,16 +17,37 @@ CREATE TABLE pages (
   book_id BIGINT,
   page_number BIGINT,
   page_text VARCHAR,
-FOREIGN KEY (book_id) REFERENCES books(id)
+  FOREIGN KEY (book_id) REFERENCES books(id)
 );
+
+CREATE TABLE users (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  email VARCHAR,
+  password_hash VARCHAR NOT NULL,
+  first_name VARCHAR,
+  last_name VARCHAR,
+  current_page BIGINT DEFAULT 1,
+  FOREIGN KEY (current_page) REFERENCES pages(id)
+);
+
+CREATE TABLE paths (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  user_id BIGINT,
+  source_id BIGINT,
+  target_id BIGINT,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (source_id) REFERENCES pages(id),
+  FOREIGN KEY (target_id) REFERENCES pages(id)
+);
+
 
 CREATE TABLE options (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   page_id BIGINT,
   target_page BIGINT,
   option_text VARCHAR,
-FOREIGN KEY (page_id) REFERENCES pages(id),
-FOREIGN KEY (target_page) REFERENCES pages(id)
+  FOREIGN KEY (page_id) REFERENCES pages(id),
+  FOREIGN KEY (target_page) REFERENCES pages(id)
 );
 
 INSERT INTO books (
