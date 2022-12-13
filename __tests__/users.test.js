@@ -101,4 +101,6 @@ describe('user routes', () => {
   //   // text on page is first page stuff
   //   // go to page 2, sign out user, the sign back in and expect user to be on page 2
   // });
+
+  //git nightmare
 });
