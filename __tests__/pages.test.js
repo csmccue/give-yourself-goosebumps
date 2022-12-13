@@ -65,5 +65,9 @@ describe('user routes', () => {
     `);
   });
 
-  test('POST /pages/2 adds new path to user paths and redirects to GET /pages/2', () => {});
+  test('POST /pages/2 adds new path to user paths and redirects to GET /pages/2', async () => {
+ 
+    const [agent, user] = await registerAndLogin();
+    const res = await agent.post('/api/v1/pages/1');
+  });
 });
