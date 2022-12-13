@@ -4750,7 +4750,7 @@ THE END! '),
 ('135','121', 'Pick slide 1,4, or 5, and go to PAGE 121.'),
 ('135','95', 'Pick slide 2, 7, or 9, and go to PAGE 95.'),
 ('135','68', 'Pick slide 3, 6, 8, or 10, and go to PAGE 68.'),
-('136','1', 'THE END'),
+('136','1', 'Start over?'),
 
 -- // book 2
 ('137','138','Go on to PAGE 2.'),
@@ -4923,7 +4923,7 @@ move on to PAGE 37.'),
 ('270','197','If you go to Arnold’s, turn to PAGE 61.'),
 ('270','231','If you think you should continue home, go to PAGE 95.'),
 ('271','248','Go on to PAGE 112.'),
-('272','1', 'THE END');
+('272','137', 'Start over?');
 
 
 -- ('','',''),
