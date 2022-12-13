@@ -4734,9 +4734,9 @@ THE END! '),
 ('134','22', 'If you think your Mars weight is less than 37 or more than 39, go to PAGE 22.'),
 ('135','121', 'Pick slide 1,4, or 5, and go to PAGE 121.'),
 ('135','95', 'Pick slide 2, 7, or 9, and go to PAGE 95.'),
-('135','68', 'Pick slide 3, 6, 8, or 10, and go to PAGE 68.');
+('135','68', 'Pick slide 3, 6, 8, or 10, and go to PAGE 68.'),
 
-
+-- // book 2
 ('1','2','Go on to PAGE 2.'),
 ('2','23','Turn to PAGE 23. '),
 ('3','104','Fly on to PAGE 104.'),
