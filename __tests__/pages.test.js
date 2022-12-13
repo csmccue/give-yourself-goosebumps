@@ -64,4 +64,6 @@ describe('user routes', () => {
       }
     `);
   });
+
+  test('POST /pages/2 adds new path to user paths and redirects to GET /pages/2', () => {});
 });

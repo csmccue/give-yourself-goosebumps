@@ -15,9 +15,7 @@ const mockUser = {
 const registerAndLogin = async (userProps = {}) => {
   const password = userProps.password ?? mockUser.password;
   const agent = request.agent(app);
-
   const user = await UserService.create({ ...mockUser, ...userProps });
-
   const { email } = user;
   await agent.post('/api/v1/users/sessions').send({ email, password });
   return [agent, user];
@@ -96,5 +94,10 @@ describe('user routes', () => {
     const [agent] = await registerAndLogin();
     const resp = await agent.delete('/api/v1/users/sessions');
     expect(resp.status).toBe(204);
+  });
+
+  it('GET /users/sessions successful sign in redirects user to current_page', async () => {
+    const [agent, user] = registerAndLogin();
+    // text on page is first page stuff
   });
 });

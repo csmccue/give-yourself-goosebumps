@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS pages CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS books CASCADE;
 DROP TABLE IF EXISTS options CASCADE;
+DROP TABLE IF EXISTS paths CASCADE;
 
 
 CREATE TABLE books (
@@ -27,7 +28,15 @@ CREATE TABLE users (
   FOREIGN KEY (current_page) REFERENCES pages(id)
 );
 
-
+CREATE TABLE paths (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  user_id BIGINT,
+  source_id BIGINT,
+  target_id BIGINT,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (source_id) REFERENCES pages(id),
+  FOREIGN KEY (target_id) REFERENCES pages(id)
+);
 
 
 CREATE TABLE options (
