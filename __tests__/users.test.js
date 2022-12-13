@@ -42,12 +42,12 @@ describe('user routes', () => {
     });
   });
 
-  it('signs in an existing user', async () => {
+  it('signs in an existing user and redirects', async () => {
     await request(app).post('/api/v1/users').send(mockUser);
     const res = await request(app)
       .post('/api/v1/users/sessions')
       .send({ email: 'test@example.com', password: '12345' });
-    expect(res.status).toEqual(200);
+    expect(res.status).toEqual(302);
   });
 
   it('/protected should return a 401 if not authenticated', async () => {
@@ -96,9 +96,9 @@ describe('user routes', () => {
     expect(resp.status).toBe(204);
   });
 
-  it('GET /users/sessions successful sign in redirects user to current_page', async () => {
-    const [agent, user] = registerAndLogin();
-    // text on page is first page stuff
-    // go to page 2, sign out user, the sign back in and expect user to be on page 2
-  });
+  // it('GET /users/sessions successful sign in redirects user to current_page', async () => {
+  //   const [agent, user] = registerAndLogin();
+  //   // text on page is first page stuff
+  //   // go to page 2, sign out user, the sign back in and expect user to be on page 2
+  // });
 });
