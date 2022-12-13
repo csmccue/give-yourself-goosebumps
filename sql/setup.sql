@@ -1036,7 +1036,7 @@ You think hard. The Doom Slide. You know you’ve heard about it before. But whe
 And then you remember! It was in a GOOSEBUMPS book you read! One Day at HorrorLand.
 Now you know you’re in big trouble. Because you remember all about the Doom Slide from the book. You remember that if you pick the wrong slide, you’ll spend the rest of your life sliding and sliding — forever!
 Which number is the Doom Slide? Which one?'),
-('1','136', 'THE END');
+('1','136', 'THE END'),
 
 
 ('2','1','You can’t believe your parents did this to you! 
