@@ -39,7 +39,7 @@ INSERT INTO books (
   title
 )
 VALUES
-('Escape from the Carnival of Horrors');
+('Escape from the Carnival of Horrors'),
 ('Beware of the Purple Peanut Butter');
 
 INSERT INTO pages (
