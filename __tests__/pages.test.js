@@ -36,6 +36,7 @@ describe('user routes', () => {
     expect(user.currentPage).toBe('1');
     await agent.get('/api/v1/pages/2');
     const updatedUser = await User.getByEmail(mockUser.email);
+    console.log('updatetee', updatedUser);
     expect(updatedUser.currentPage).toBe('2');
   });
   it('authenticated user can view pages', async () => {
