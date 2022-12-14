@@ -4,7 +4,6 @@ const request = require('supertest');
 const app = require('../lib/app');
 const UserService = require('../lib/services/UserService');
 const User = require('../lib/models/User');
-const Path = require('../lib/models/Path');
 const Page = require('../lib/models/Page');
 User;
 
@@ -36,7 +35,6 @@ describe('user routes', () => {
     expect(user.currentPage).toBe('1');
     await agent.get('/api/v1/pages/2');
     const updatedUser = await User.getByEmail(mockUser.email);
-    console.log('updatetee', updatedUser);
     expect(updatedUser.currentPage).toBe('2');
   });
   it('authenticated user can view pages', async () => {
@@ -77,7 +75,6 @@ describe('user routes', () => {
     const res = await agent.post('/api/v1/pages/2').send({ sourceId: 1 });
     const page = new Page({ id: res.body.id, page_text: res.body.pageText });
     await page.addPreviousPage(res.body.id);
-    console.log('kjashdfkjhaskdhf', page);
 
     expect(res.status).toBe(200);
   });
