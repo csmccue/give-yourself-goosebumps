@@ -4,6 +4,8 @@ const request = require('supertest');
 const app = require('../lib/app');
 const UserService = require('../lib/services/UserService');
 const User = require('../lib/models/User');
+const Path = require('../lib/models/Path');
+const Page = require('../lib/models/Page');
 User;
 
 const mockUser = {
@@ -71,8 +73,11 @@ describe('user routes', () => {
     const user = await UserService.create({ ...mockUser });
     const { email } = user;
     await agent.post('/api/v1/users/sessions').send({ email, password });
-    const res = agent.post('/api/v1/pages/2');
-    expect(User.getAllPaths);
-    // going to have userid, path from page one to page 2
+    const res = await agent.post('/api/v1/pages/2').send({ sourceId: 1 });
+    const page = new Page({ id: res.body.id, page_text: res.body.pageText });
+    await page.addPreviousPage(res.body.id);
+    console.log('kjashdfkjhaskdhf', page);
+
+    expect(res.status).toBe(200);
   });
 });
