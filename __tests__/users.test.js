@@ -105,7 +105,8 @@ describe('user routes', () => {
       .post('/api/v1/users/sessions')
       .send({ email, password });
     expect(res.header.location).toMatchInlineSnapshot(
-      '"http://localhost:7890/api/v1/pages/1"'
+      '"http://localhost:7890/api/v1/pages/1"',
+      `undefined`
     );
 
     await agent.get('/api/v1/pages/10');
@@ -114,7 +115,8 @@ describe('user routes', () => {
       .post('/api/v1/users/sessions')
       .send({ email, password });
     expect(resTwo.header.location).toMatchInlineSnapshot(
-      '"http://localhost:7890/api/v1/pages/10"'
+      '"http://localhost:7890/api/v1/pages/10"',
+      `undefined`
     );
     // text on page is first page stuff
     // go to page 2, sign out user, the sign back in and expect user to be on page 2
