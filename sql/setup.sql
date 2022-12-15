@@ -18,6 +18,7 @@ CREATE TABLE pages (
   book_id BIGINT,
   page_number BIGINT,
   page_text VARCHAR,
+  is_first BOOLEAN DEFAULT FALSE,
   FOREIGN KEY (book_id) REFERENCES books(id)
 );
 
@@ -36,11 +37,11 @@ CREATE TABLE paths (
   user_id BIGINT,
   source_id BIGINT,
   target_id BIGINT,
+  recent BOOLEAN DEFAULT TRUE,
   FOREIGN KEY (user_id) REFERENCES users(id),
   FOREIGN KEY (source_id) REFERENCES pages(id),
   FOREIGN KEY (target_id) REFERENCES pages(id)
 );
-
 
 CREATE TABLE options (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -53,10 +54,10 @@ CREATE TABLE options (
 
 CREATE TABLE current_pages (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  page_id BIGINT,
   user_id BIGINT,
-  FOREIGN KEY (page_id) REFERENCES pages(id),
-  FOREIGN KEY (user_id) REFERENCES users(id)
+  page_id BIGINT,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (page_id) REFERENCES pages(id)
 );
 
 INSERT INTO books (
@@ -69,7 +70,8 @@ VALUES
 INSERT INTO pages (
   book_id,
   page_number,
-  page_text
+  page_text,
+  is_first
 )
 VALUES
 ('1','1','“What do you want to do?” 
@@ -97,7 +99,14 @@ You guess Brad is kind of a wimp — even if he is your best friend.
 her freckles really pop out. Now there are about a million of them spread 
 across her face. 
 
-“Hey! I know what we should do!” Patty suddenly bursts out.'),
+“Hey! I know what we should do!” Patty suddenly bursts out.', TRUE);
+
+INSERT INTO pages (
+  book_id,
+  page_number,
+  page_text
+)
+VALUES
 ('1','2','“Let’s bike over to Bennet’s Field and watch them set up the carnival!” 
 
 
@@ -2700,7 +2709,15 @@ If you remember which number slide is the Doom Slide (or if you have
 the book and can look it up), choose a slide that is not the Doom Slide. If 
 you can’t remember, you’ll have to leave it to luck. Pick a number between 
 1 - 10 .'),
-('1','136','THE END'),
+('1','136','THE END');
+
+INSERT INTO pages (
+  book_id,
+  page_number,
+  page_text,
+  is_first
+)
+VALUES
 ('2','1','You can’t believe your parents did this to you! 
 
 
@@ -2728,7 +2745,14 @@ steps are cracked and crumbling. Not very promising.
 At least the creepy cousins aren’t around, you think. Maybe you can 
 sneak off before they know you’re here. 
 
-Then a loud bang makes you nearly jump out of your skin!'),
+Then a loud bang makes you nearly jump out of your skin!', TRUE);
+
+INSERT INTO pages (
+  book_id,
+  page_number,
+  page_text
+)
+VALUES
 ('2','2','Barney runs out the front door, letting it slam behind him. You slowly step 
 out of the car. Barney’s pudgy face breaks into a mean grin under his thick 
 blond hair. Even though he’s only a year older than you, he’s twice your size. 
@@ -6126,81 +6150,6 @@ You feel great! Until you hear the unmistakable sound of police sirens.
 
 Headed your way.'),
 ('2', '136', 'THE END');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 INSERT INTO options (
   page_id,
