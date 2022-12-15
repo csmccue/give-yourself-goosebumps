@@ -78,4 +78,10 @@ describe('user routes', () => {
 
     expect(res.status).toBe(200);
   });
+
+  test('GET /pages/10 returns info for page 1 if user has never been to a page before', async () => {
+    const [agent, user] = await registerAndLogin();
+    const res = await agent.get('api/v1//pages/10');
+    expect(res.body.id).toEqual(1);
+  });
 });
