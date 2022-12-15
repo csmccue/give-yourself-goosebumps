@@ -3,9 +3,8 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 const UserService = require('../lib/services/UserService');
-const User = require('../lib/models/User');
-const Page = require('../lib/models/Page');
-User;
+// const User = require('../lib/models/User');
+// const Page = require('../lib/models/Page');
 
 const mockUser = {
   firstName: 'Test',
@@ -81,7 +80,7 @@ describe('user routes', () => {
   // });
 
   test('GET /pages/10 returns info for page 1 if user has never been to a page before', async () => {
-    const [agent, user] = await registerAndLogin();
+    const [agent] = await registerAndLogin();
     const res = await agent.get('/api/v1/pages/10');
     expect(res.body.id).toEqual('1');
   });
