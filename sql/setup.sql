@@ -99,13 +99,14 @@ You guess Brad is kind of a wimp — even if he is your best friend.
 her freckles really pop out. Now there are about a million of them spread 
 across her face. 
 
-“Hey! I know what we should do!” Patty suddenly bursts out.'), TRUE);
+“Hey! I know what we should do!” Patty suddenly bursts out.', TRUE);
 
 INSERT INTO pages (
   book_id,
   page_number,
   page_text
 )
+VALUES
 ('1','2','“Let’s bike over to Bennet’s Field and watch them set up the carnival!” 
 
 
