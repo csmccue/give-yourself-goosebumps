@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS books CASCADE;
 DROP TABLE IF EXISTS options CASCADE;
 DROP TABLE IF EXISTS paths CASCADE;
+DROP TABLE IF EXISTS current_pages CASCADE;
 
 
 CREATE TABLE books (
@@ -48,6 +49,14 @@ CREATE TABLE options (
   option_text VARCHAR,
   FOREIGN KEY (page_id) REFERENCES pages(id),
   FOREIGN KEY (target_page) REFERENCES pages(id)
+);
+
+CREATE TABLE current_pages (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  page_id BIGINT,
+  user_id BIGINT,
+  FOREIGN KEY (page_id) REFERENCES pages(id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 INSERT INTO books (
