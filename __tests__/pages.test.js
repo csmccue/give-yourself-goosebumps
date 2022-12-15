@@ -3,8 +3,6 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 const UserService = require('../lib/services/UserService');
-const User = require('../lib/models/User');
-const Page = require('../lib/models/Page');
 
 const mockUser = {
   firstName: 'Test',
