@@ -52,15 +52,31 @@ describe('user routes', () => {
             "target_page": "2",
           },
         ],
-        "pageText": "\\"What do you want to do?”
-      “I don’t know, Patty. What do you want to do?”
-      “Not fair, Brad. I asked you first.”
-      Patty and Brad. Your two best friends. Arguing. As usual.
-      It’s the last week of August. And Patty and Brad haven’t stopped fighting since your summer vacation started.
-      Patty likes being bossy. You don’t mind, though. It’s no big deal.
-      It’s hard to win a fight with her anyway. You don’t know why Brad even tries. You guess it’s because he doesn’t want to look like a wimp in front of a girl.
-      “There’s nothing to do. I guess I’ll just go home,” Brad says. He shoves his hands in his pockets. Then his shoulders slump and he sort of shrivels up. You guess Brad is kind of a wimp — even if he is your best friend.
-      “You’re so boring, Brad,” Patty complains. Whenever Patty complains, her freckles really pop out. Now there are about a million of them spread across her face.
+        "pageText": "“What do you want to do?” 
+
+      “I don’t know, Patty. What do you want to do?” 
+
+      “Not fair, Brad. I asked you first.” 
+
+      Patty and Brad. Your two best friends. Arguing. As usual. 
+
+      It’s the last week of August. And Patty and Brad haven’t stopped fighting 
+      since your summer vacation started. 
+
+      Patty likes being bossy. You don’t mind, though. It’s no big deal. 
+
+      It’s hard to win a fight with her anyway. You don’t know why Brad even 
+      tries. You guess it’s because he doesn’t want to look like a wimp in front of a 
+      girl. 
+
+      “There’s nothing to do. I guess I’ll just go home,” Brad says. He shoves 
+      his hands in his pockets. Then his shoulders slump and he sort of shrivels up. 
+      You guess Brad is kind of a wimp — even if he is your best friend. 
+
+      “You’re so boring, Brad,” Patty complains. Whenever Patty complains, 
+      her freckles really pop out. Now there are about a million of them spread 
+      across her face. 
+
       “Hey! I know what we should do!” Patty suddenly bursts out.",
       }
     `);
