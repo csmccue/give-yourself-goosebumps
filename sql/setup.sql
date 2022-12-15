@@ -17,6 +17,7 @@ CREATE TABLE pages (
   book_id BIGINT,
   page_number BIGINT,
   page_text VARCHAR,
+  is_first BOOLEAN DEFAULT FALSE,
   FOREIGN KEY (book_id) REFERENCES books(id)
 );
 
@@ -60,7 +61,8 @@ VALUES
 INSERT INTO pages (
   book_id,
   page_number,
-  page_text
+  page_text,
+  is_first
 )
 VALUES
 ('1','1', '"What do you want to do?”
@@ -72,7 +74,42 @@ Patty likes being bossy. You don’t mind, though. It’s no big deal.
 It’s hard to win a fight with her anyway. You don’t know why Brad even tries. You guess it’s because he doesn’t want to look like a wimp in front of a girl.
 “There’s nothing to do. I guess I’ll just go home,” Brad says. He shoves his hands in his pockets. Then his shoulders slump and he sort of shrivels up. You guess Brad is kind of a wimp — even if he is your best friend.
 “You’re so boring, Brad,” Patty complains. Whenever Patty complains, her freckles really pop out. Now there are about a million of them spread across her face.
-“Hey! I know what we should do!” Patty suddenly bursts out.'),
+“Hey! I know what we should do!” Patty suddenly bursts out.', TRUE),
+('2','1','You can’t believe your parents did this to you! 
+
+
+
+Your mom and dad are off to Europe on a business trip. So you have to 
+spend the summer in Fiskeville with Aunt Fiona and Uncle Harvey. Which 
+means spending the summer with your cousins Barney and Dora. 
+
+Which means a summer of torture. 
+
+Barney is a year older than you and a bully. Dora is a year younger and a 
+whiny pest. Not what you had in mind for your summer vacation. 
+
+You stare glumly out the car window as your aunt and uncle drive home 
+from the airport. Aunt Fiona turns around in the front seat and beams at you. 
+“Barney and Dora can’t wait till we bring you home,” she squeals. 
+
+I’ll bet, you think. Bad-News Barney can’t wait to pound me into the 
+ground. Dora the Drag can’t wait to rope me into playing with her dolls. 
+
+Uncle Harvey pulls the car into a driveway. You stare at the house. It’s 
+two stories high and run-down. The lawn is choked with weeds. The front 
+steps are cracked and crumbling. Not very promising. 
+
+At least the creepy cousins aren’t around, you think. Maybe you can 
+sneak off before they know you’re here. 
+
+Then a loud bang makes you nearly jump out of your skin!', TRUE);
+
+INSERT INTO pages (
+  book_id,
+  page_number,
+  page_text
+)
+VALUES
 ('1', '2', '“Let’s bike over to Bennet’s Field and watch them set up the carnival!”
 “I don’t know,” you answer. “It’s getting dark, and Mom said I have to be in by nine.”
 “It’s only a quick bike ride,” Brad says. “Are you some kind of wimp?”
@@ -1053,35 +1090,6 @@ Now you know you’re in big trouble. Because you remember all about the Doom Sl
 Which number is the Doom Slide? Which one?'),
 ('1','136', 'THE END'),
 
-
-('2','1','You can’t believe your parents did this to you! 
-
-
-
-Your mom and dad are off to Europe on a business trip. So you have to 
-spend the summer in Fiskeville with Aunt Fiona and Uncle Harvey. Which 
-means spending the summer with your cousins Barney and Dora. 
-
-Which means a summer of torture. 
-
-Barney is a year older than you and a bully. Dora is a year younger and a 
-whiny pest. Not what you had in mind for your summer vacation. 
-
-You stare glumly out the car window as your aunt and uncle drive home 
-from the airport. Aunt Fiona turns around in the front seat and beams at you. 
-“Barney and Dora can’t wait till we bring you home,” she squeals. 
-
-I’ll bet, you think. Bad-News Barney can’t wait to pound me into the 
-ground. Dora the Drag can’t wait to rope me into playing with her dolls. 
-
-Uncle Harvey pulls the car into a driveway. You stare at the house. It’s 
-two stories high and run-down. The lawn is choked with weeds. The front 
-steps are cracked and crumbling. Not very promising. 
-
-At least the creepy cousins aren’t around, you think. Maybe you can 
-sneak off before they know you’re here. 
-
-Then a loud bang makes you nearly jump out of your skin!'),
 ('2','2','Barney runs out the front door, letting it slam behind him. You slowly step 
 out of the car. Barney’s pudgy face breaks into a mean grin under his thick 
 blond hair. Even though he’s only a year older than you, he’s twice your size. 
