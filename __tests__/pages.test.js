@@ -40,6 +40,7 @@ describe('user routes', () => {
     const res = await agent.get('/api/v1/pages/1');
     expect(res.body).toMatchInlineSnapshot(`
       Object {
+        "bookId": "1",
         "id": "1",
         "isFirst": true,
         "options": Array [
